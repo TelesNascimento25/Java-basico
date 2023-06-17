@@ -1,0 +1,68 @@
+Tipos variaveis - textes.
+
+public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o primeiro número: ");
+        int numero1 = scanner.nextInt();
+
+        System.out.println("Digite o segundo número: ");
+        int numero2 = scanner.nextInt();
+
+        System.out.println("Digite o terceiro número: ");
+        int numero3 = scanner.nextInt();
+
+        System.out.println("Digite o quarto número: ");
+        int numero4 = scanner.nextInt();
+
+        System.out.println("Deseja ver os números em ordem crescente (Crescente) ou decrescente (Decrescente)?");
+        String opcao = scanner.next();
+
+        int[] numeros = {numero1, numero2, numero3, numero4};
+
+        if (opcao.equalsIgnoreCase("Crescente")) {
+            Arrays.sort(numeros);
+            System.out.println("Números em ordem crescente: ");
+            for (int numero : numeros) {
+                System.out.print(numero + " ");
+            }
+        } else if (opcao.equalsIgnoreCase("Decrescente")) {
+            Arrays.sort(numeros);
+            System.out.println("Números em ordem decrescente: ");
+            for (int i = numeros.length - 1; i >= 0; i--) {
+                System.out.print(numeros[i] + " ");
+            }
+        } else {
+            System.out.println("Opção inválida. Por favor, escolha Crescente para crescente ou Decrescente para decrescente.");
+        }
+
+        int quantidadePares = 0;
+        int quantidadeImpares = 0;
+        System.out.println("\n");
+
+        for (int numero : numeros) {
+            if (numero % 2 == 0) {
+                quantidadePares++;
+            } else {
+                quantidadeImpares++;
+            }
+        }
+
+        System.out.println("Quantidade de números pares: " + quantidadePares);
+        System.out.println("Números pares: ");
+        for (int numero : numeros) {
+            if (numero % 2 == 0) {
+                System.out.print(numero + " ");
+            }
+        }
+        System.out.println("\n");
+
+        System.out.println("Quantidade de números ímpares: " + quantidadeImpares);
+        System.out.println("Números ímpares: ");
+        for (int numero : numeros) {
+            if (numero % 2 != 0) {
+                System.out.print(numero + " ");
+            }
+        }
+    }
+}
