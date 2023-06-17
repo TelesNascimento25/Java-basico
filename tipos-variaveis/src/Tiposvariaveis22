@@ -1,0 +1,38 @@
+Scanner scanner = new Scanner(System.in);
+
+  public class OrdenacaoNumeros {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] numeros = new int[4];
+
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Digite o número " + (i + 1) + ":");
+            numeros[i] = scanner.nextInt();
+        }
+
+        System.out.println("Deseja ver os números em ordem crescente (Crescente) ou decrescente (Decrescente)?");
+        String opcao = scanner.next();
+
+        Arrays.sort(numeros);
+
+        System.out.println("Números em ordem " + opcao.toLowerCase() + ": " + Arrays.toString(numeros));
+
+        int quantidadePares = 0;
+        int quantidadeImpares = 0;
+
+        for (int numero : numeros) {
+            if (numero % 2 == 0) {
+                quantidadePares++;
+            } else {
+                quantidadeImpares++;
+            }
+        }
+
+        System.out.println("\nQuantidade de números pares: " + quantidadePares);
+        System.out.println("Números pares: " + Arrays.toString(Arrays.stream(numeros).filter(n -> n % 2 == 0).toArray()));
+
+        System.out.println("\nQuantidade de números ímpares: " + quantidadeImpares);
+        System.out.println("Números ímpares: " + Arrays.toString(Arrays.stream(numeros).filter(n -> n % 2 != 0).toArray()));
+    }
+}
