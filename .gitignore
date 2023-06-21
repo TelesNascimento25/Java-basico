@@ -23,3 +23,8 @@
 hs_err_pid*
 replay_pid*
 tipos-variaveis/.vscode/settings.json
+
+* for(int i = 0; i < 4; i++) {
+		     System.out.print("Numero " + (i + 1) + ": ");
+		     numeros.add(sc.nextInt());
+		 }
